@@ -2,8 +2,7 @@
     "rewrites": [
       {
         "source": "/",
-        "destination": "/homePage.html",
-        "permanent":true
+        "destination": "/homePage.html"
       }
     ]
   }
