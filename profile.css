@@ -1,0 +1,89 @@
+body{
+    background:#D4D8DD;
+}
+
+.card{
+    border:none;
+
+    position:relative;
+    overflow:hidden;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.card:before{
+    
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background-color: rgb(53, 114, 142) 10%;
+    transform:scaleY(1);
+    transition:all 0.5s;
+    transform-origin: bottom
+}
+
+.card:after{
+    
+    content:"";
+    position:absolute;
+    left:0;
+    top:0;
+    width:4px;
+    height:100%;
+    background-color: rgb(53, 114, 142);
+    transform:scaleY(0);
+    transition:all 0.5s;
+    transform-origin: bottom
+}
+
+.card:hover::after{
+    transform:scaleY(1);
+}
+
+
+.fonts{
+    font-size:11px;
+}
+
+.social-list{
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.social-list li{
+    padding: 5px;
+    font-size: 16px;
+    color: rgb(53, 114, 142);
+}
+
+
+.buttons button:nth-child(1){
+       border:1px solid  rgb(53, 114, 142) 0% !important;
+       color: rgb(53, 114, 142) 0%;
+       height:40px;
+}
+
+.buttons button:nth-child(1):hover{
+       border:1px solid  rgb(53, 114, 142) 0% !important;
+       color:#fff;
+       height:40px;
+       background-color: rgb(53, 114, 142) 0%;
+}
+
+.buttons button:nth-child(2){
+       border:1px solid  rgb(53, 114, 142) 0% !important;
+       background-color: rgb(53, 114, 142) 0%;
+       color:#fff;
+        height:40px;
+}
+
+.card img {
+    margin-bottom: 15px;
+  }
+
+.text-start h5 {
+    font-weight: bold;
+  }
