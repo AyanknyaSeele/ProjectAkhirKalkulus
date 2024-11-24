@@ -1,107 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- NavBar -->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+
+<body>
+  <!-- NavBar -->
+  <div data-aos="fade-down" data-aos-duration="1000">
+
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
       <div class="container">
+        <img src="/img/58d3acc1-e780-4425-a872-dd162bfe942a.png " width="50cm">
         <a class="navbar-brand" href="#">Kalkulus Ninja</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/"
-                >Home</a
-              >
+              <a class="nav-link" href="/homePage.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/kalkulator.html">Kalkulator</a>
+              <a class="nav-link" href="/Manual_Book/MANUAL BOOK KALKULUS NINJA.pdf" download>Manual Book</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                Kalkulator
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="/kalkulator.html">Kalkulator Linear</a>
+                <a class="dropdown-item" href="/kalkulatorKuadrat.html">Kalkulator Kuadrat</a>
+                <a class="dropdown-item" href="/kalkulatorpecahan.html">Kalkulator Pecahan</a>
+                <a class="dropdown-item" href="/kalkulatorIrasional.html">Kalkulator Irasional</a>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/QuizPage.html">Quiz</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/ProfilePage.html">Profil Kelompok
-
-              </a>
+              <a class="nav-link" href="/ProfilePage.html">Profil Kelompok</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
+  </div>
 
-    <!-- Home Page -->
+  <!-- Home Page -->
+  <div data-aos="fade-up" data-aos-duration="1500">
+
     <section class="home">
-      <div
-        class="jumbotron p-5 container-md mx-auto"
-        style="margin: 245px 0px 245px 0px"
-      >
+      <div class="jumbotron p-5 container-md mx-auto" style="margin: 245px 0px 245px 0px">
         <h1 class="display-4 text-center title">Pertidaksamaan</h1>
         <p class="lead text-center font2">
           Taklukan Kalkulus Dengan Cara Yang Menyenangkan
         </p>
         <div class="justify-content-center d-flex">
-          <a
-            class="btn btn-success btn-lg text-center"
-            href="#definisi"
-            role="button"
-            >Pelajari Lebih Lanjut</a
-          >
+          <a class="btn btn-success btn-lg text-center" href="#definisi" role="button">Pelajari Lebih Lanjut</a>
         </div>
       </div>
     </section>
 
     <!-- Definisi -->
-    <section class="navbar rounded" id="definisi">
-      <div class="container">
-        <div class="row d-flex justify-content-between align-items-center">
-          <div class="col-md-6">
-            <h1 class="fs-1 fontTitle mb-0">Definisi</h1>
-            <p class="fs-5 font justify">
-              Pertidaksamaan adalah sebuah kalimat matematika yang menyatakan
-              hubungan tidak sama antara dua ekspresi matematika atau tidak
-              memiliki besaran yang sama. Oleh karena itu, penulisan
-              pertidaksamaan tidak menggunakan simbol sama dengan (=).
-            </p>
-          </div>
-          <div class="col d-flex justify-content-end">
-            <img
-              src="img/63f43ec4-5476-48a6-b299-3e607d25c7f3.png"
-              alt=""
-              style="width: 100%; max-width: 800px"
-            />
+    <div data-aos="fade-right" data-aos-duration="1500">
+
+      <section class="navbar rounded" id="definisi">
+        <div class="container">
+          <div class="row d-flex justify-content-between align-items-center">
+            <div class="col-md-6">
+              <h1 class="fs-1 fontTitle mb-0">Definisi</h1>
+              <p class="fs-5 font justify">
+                Pertidaksamaan adalah sebuah kalimat matematika yang menyatakan
+                hubungan tidak sama antara dua ekspresi matematika atau tidak
+                memiliki besaran yang sama. Oleh karena itu, penulisan
+                pertidaksamaan tidak menggunakan simbol sama dengan (=).
+              </p>
+            </div>
+            <div class="col d-flex justify-content-end">
+              <img src="img/63f43ec4-5476-48a6-b299-3e607d25c7f3.png" alt="" style="width: 100%; max-width: 800px" />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+  </div>
 
-    <!-- Sifat-Sifat Pertiadaksamaan -->
+  <!-- Sifat-Sifat Pertiadaksamaan -->
+  <div data-aos="fade-left" data-aos-duration="1500">
+
     <section class="rounded my-5" id="definisi">
       <div class="container">
-        <div
-          class="row d-flex flex-row-reverse justify-content-between align-items-center"
-        >
+        <div class="row d-flex flex-row-reverse justify-content-between align-items-center">
           <div class="col-md-6 justify-content-start">
             <h1 class="fs-1 fontTitle2 mb-0 z-3">Sifat-Sifat Pertidaksamaan</h1>
             <p class="fs-5 font text-dark justify">
@@ -135,8 +133,8 @@
               <br />
               - Jika a > b dan c > 0, maka ac > bc.
               <br />
-              - Jika a > b dan c < 0, maka ac < bc.
-              <br />
+              - Jika a > b dan c
+              < 0, maka ac < bc. <br />
               Artinya, jika kedua ruas dari suatu pertidaksamaan dikalikan atau
               dibagi dengan bilangan positif, tanda pertidaksamaan tidak
               berubah. Namun, jika dikalikan atau dibagi dengan bilangan
@@ -144,23 +142,84 @@
             </p>
           </div>
           <div class="col d-flex justify-content-start">
-            <img
-              src="img/Sifat-Sifat.png"
-              alt=""
-              style="width: 80%; max-width: 800px"
-            />
+            <img src="img/Sifat-Sifat.png" alt="" style="width: 80%; max-width: 800px" />
           </div>
         </div>
       </div>
     </section>
+  </div>
 
-    <!-- Jenis Jenis Pertidaksamaan -->
+  <!-- Interval -->
+  <div data-aos="fade-right" data-aos-duration="1500">
+
     <section class="navbar rounded" id="definisi">
       <div class="container">
         <div class="row d-flex justify-content-between align-items-center">
           <div class="col-md-6">
-            <h1 class="fs-1 fontTitle mb-0">Jenis-jenis Pertidaksamaan</h1>
+            <h1 class="fs-1 fontTitle mb-0">Interval</h1>
             <p class="fs-5 font justify">
+              Interval dalam kamus Besar Bahasa Indonesia (KBBI) mendefinisikan berarti jarak. interval adalah segmen
+              garis bilangan yang mencakup semua angka di antara dua titik tertentu.Interval dapat diartikan sebagai:
+              <br>
+              <br> - Batas atau jarak antara bilangan atau angka satu dengan yang lainnya
+
+              <br> - Bilangan rill yang terletak di antara dua titik akhir pada garis bilangan
+
+              <br> - Rentang nilai antara dua titik Interval dapat ditulis menggunakan pertidaksamaan, garis bilangan,
+              atau notasi interval.
+              <br>
+              <br>
+              Terdapat beberapa jenis interval, yaitu interval terbuka, tertutup, dan setengah terbuka. Berikut adalah
+              pengertiannya:
+              <br>
+              <br>
+              1. Interval Tertutup
+              <br>
+              Interval Tertutup adalah himpunan semua bilangan real untuk sebarang konsta real dan dengan dinyatakan
+              dalam
+              suatu pertidaksamaan dan dinotasikan, dalam kesimpulannya interval ini memiliki titik akhir.
+              Bernotasikan simbol "≤ dan ≥", dalam garis bilangan diartikan " • " (Lingkaran penuh).
+              <br>
+              <br>
+              2. Interval Terbuka
+              <br>
+              Interval terbuka adalah interval yang tidak mencakup titik akhir. Interval terbuka ditulis dalam notasi
+              interval menggunakan tanda kurung bulat. bernotasikan simbol " > dan < ", dalam garis bilangan diartikan "
+                o " (Lingkaran berongga).
+            <br>
+            <br>
+            3. interval Setengah Terbuka 
+            <br>
+            Interval setengah terbuka adalah interval yang mencakup satu titik akhir dan semua titik hingga tetapi tidak termasuk titik akhir berikutnya. Interval ini dilambangkan dengan notasi campuran untuk interval terbuka dan tertutup.
+            Karena interval ini antara tertutup atau terbuka jadi ternotasikan dengan simbol campuran yaitu "> dan ≤
+                atau ≥ dan < "
+            <br>
+            <br>
+            4. Garis Lurus
+            <br>
+            Interval ini merupakan merupakan fondasi dasar dari suatu garis bilangan, sehingga dapat mencakupi seluruh notasi.
+
+
+          </p>
+        </div>
+        <div class=" col d-flex justify-content-end">
+                  <img src="/img/4f7a42af-d76a-40cf-919d-eead899c698a.png" alt=""
+                    style="width: 100%; max-width: 800px" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Jenis Jenis Pertidaksamaan -->
+  <div data-aos="fade-left" data-aos-duration="1500">
+
+    <section class="rounded my-5" id="definisi">
+      <div class="container">
+        <div class="row d-flex flex-row-reverse justify-content-between align-items-center">
+          <div class="col-md-6 justify-content-start">
+            <h1 class="fs-1 fontTitle2 mb-0 z-3">Jenis-jenis Pertidaksamaan</h1>
+            <p class="fs-5 font text-dark justify">
               Pertidaksamaan memiliki banyak jenisnya dalam matematika. Disini
               kita akan mempelajari jenis umum dari Pertiadaksamaan. Jenis
               pertidaksamaan yang paling umum ada 4 yaitu Pertidaksamaan Linear,
@@ -170,50 +229,45 @@
               1. Pertidaksamaan Linear
               <br />
               Pertidaksamaan linear merupakan bentuk pertidaksamaan yang memuat
-              bentuk aljabar dengan ordo satu misal (x + 2) > 1 atau (x - 4) <
-              -2.
-              <br />
+              bentuk aljabar dengan ordo satu misal (x + 2) > 1 atau (x - 4)
+              < -2. <br />
               <br />
               2. Pertidaksamaan Kuadrat
               <br />
               Pertidaksamaan kuadrat merupakan bentuk pertidaksamaan yang memuat
               bentuk aljabar dengan ordo maksimal dua misal ax² + bx + c >
-              dengan notasi bisa berupa yang lain (< , ≤ , ≥).
+              dengan notasi bisa berupa yang lain (
+              < , ≤ , ≥). <br />
               <br />
-              <br />
-              3. Pertidaksamaan Pecahan
+              3 . Pertidaksamaan Pecahan
               <br />
               Pertidaksamaan pecahanan terdiri dari fungsi f(x) dan g(x). Secara
               umum, bentuk pertidaksamaannya dapat dinyatakan dengan :f(x)/g(0)
-              > 0 dengan notasi (>) bisa sebagai : <, ≤ atau ≥
-              <br />
+              > 0 dengan notasi (>) bisa sebagai :
+              <, ≤ atau ≥ <br />
               <br />
               4. Pertidaksamaan Irasional
               <br />
               Pertidaksamaan yang mengandung bentuk akar (√) disebut sebagai
-              pertidaksamaan irasional. Bentuk-bentuk: √f(x) <, <, ≤ , ≥ √g(x)
-            </p>
+              pertidaksamaan irasional. Bentuk-bentuk: √f(x) <, <, ≤ , ≥ √g(x) </p>
           </div>
           <div class="col d-flex justify-content-end">
-            <img
-              src="img/Jenis-jenis.png"
-              alt=""
-              style="width: 100%; max-width: 800px"
-            />
+            <img src="img/Jenis-jenis.png" alt="" style="width: 100%; max-width: 800px" />
           </div>
         </div>
       </div>
     </section>
+  </div>
 
-    <!-- Contoh Soal -->
-    <section class="rounded my-5" id="definisi">
+  <!-- Contoh Soal -->
+  <div data-aos="fade-up" data-aos-duration="1500">
+
+    <section class="rounded my-5" id="contoh-soal">
       <div class="container">
-        <div
-          class="row d-flex justify-content-between align-items-center"
-        >
-        <h1 class="fs-1 fontTitle2 mb-0 z-3 text-center ">Contoh Soal</h1>
+        <div class="row d-flex justify-content-between align-items-center">
+          <h1 class="fs-1 fontTitle mb-0 z-3 text-center ">Contoh Soal</h1>
           <div class="col-6 justify-content-start">
-            <p class="fs-5 font text-dark justify-content-start">
+            <p class="fs-5 font justify-content-start">
               1. Pertidaksamaan Linear:
               <br />
               - Soal
@@ -223,13 +277,13 @@
               <br />
               - Jawaban
               <br />
-              = 3x + 6 > 0 
+              = 3x + 6 > 0
               <br />
-              = 3x > -6 
+              = 3x > -6
               <br />
-              = x > -6/3 
+              = x > -6/3
               <br />
-              = x > -2 
+              = x > -2
               <br />
               <br />
               Hp = (x| x > -2,x € R)
@@ -238,7 +292,7 @@
             </p>
           </div>
           <div class="col-6 justify-content-end">
-            <p class="fs-5 font text-dark justify">
+            <p class="fs-5 font justify">
               2. Pertidaksamaan Kuadrat:
               <br />
               - Soal
@@ -250,19 +304,21 @@
               <br />
               = x² + 3x - 10 ≥ 0
               <br />
-              = (x + 5)(x - 2) >= 0 
+              = (x + 5)(x - 2) >= 0
               <br />
-              = x + 5 = 0  x = -5 
+              = x + 5 = x = -5
               <br />
-              = x - 2 = 0 x = 2
+              atau
+              <br />
+              = x - 2 = x = 2
               <br />
               <br />
               HP = {x| x ≤ -5 atau x ≥ 2, x ∈ R}
 
-              </p>
-            </div>
-            <div class="col-6 justify-content-start">
-              <p class="fs-5 font text-dark justify">
+            </p>
+          </div>
+          <div class="col-6 justify-content-start">
+            <p class="fs-5 font mt-5 justify">
               3. Pertidaksamaan Pecahan
               <br />
               - Soal
@@ -297,9 +353,9 @@
               <br />
               daerah tengah penentu positif atau negatif
               <br />
-              = 2x+1/x-2 
+              = 2x+1/x-2
               <br />
-              = 2.0+1/0-2 
+              = 2.0+1/0-2
               <br />
               = 1 / -2
               <br />
@@ -308,10 +364,10 @@
               <br />
               Hp = {x| x ≤ -3 atau x > 2}
 
-              </p>
-            </div>
-            <div class="col-6 justify-content-end">
-              <p class="fs-5 font text-dark justify">
+            </p>
+          </div>
+          <div class="col-6 justify-content-end">
+            <p class="fs-5 font justify">
               4. Pertidaksamaan Irasional
               <br />
               - Soal
@@ -325,7 +381,7 @@
               <br />
               = (3 x -6)² > (3)²
               <br />
-              = 3x - 6 > 9 
+              = 3x - 6 > 9
               <br />
               = 3x > 9+6
               <br />
@@ -348,20 +404,22 @@
               <br />
               <br />
               HP = {x| x > 5, x € R}
-                </p>
-              </div>
             </p>
           </div>
-          <!-- <div class="col d-flex justify-content-start">
-          </div> -->
+          </p>
         </div>
       </div>
-    </section>
+  </div>
+  </section>
+  </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
 </html>

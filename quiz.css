@@ -1,16 +1,10 @@
 body {
     background-color: #f0f2f5;
     min-height: 100vh;
-    display: flex;
-    align-items: center;
+    padding: 0px 20px 0px 20px;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
+.navbar{
     background: linear-gradient(
         134.15deg,
         rgba(53, 114, 142, 1) 0%,
@@ -19,15 +13,27 @@ body {
 }
 
 
+
 .quiz-container {
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     padding: 30px;
-    max-width: 600px;
+    max-width: 1000px;
     width: 100%;
     margin: auto;
 }
+
+.quiz-container2 {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    width: 50%;
+    margin: auto;
+}
+
 
 .quiz-header {
     text-align: center;
@@ -37,11 +43,13 @@ body {
 .question {
     font-size: 1.2rem;
     margin-bottom: 20px;
+    color: black;
 }
 
 .options {
     display: grid;
     gap: 10px;
+    color: black;
 }
 
 .option {
@@ -102,4 +110,41 @@ body {
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
+}
+
+.button2 {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(
+      134.15deg,
+      rgba(53, 114, 142, 1) 0%,
+      rgba(15, 32, 40, 1) 99.08997416496277%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  body{
+    background-color: #D4D8DD;
+    padding: 0px 20px 0px 20px;
+}
+
+.button1 {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(
+      134.15deg,
+      rgba(53, 114, 142, 1) 0%,
+      rgba(15, 32, 40, 1) 99.08997416496277%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.font {
+    font-family: "Montserrat";
+    color: #D4D8DD;
 }

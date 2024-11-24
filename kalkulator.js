@@ -24,83 +24,73 @@ function solveInequality(a, b, operator) {
 }
 
 // Contoh penggunaan
-let a = 2; // koefisien x
-let b = -4; // konstanta
-let operator = '>'; // operator pertidaksamaan
 
-console.log(solveInequality(a, b, operator));
-
-
-// 2 Kalkulator Kuadrat
-
-function hitungAkar(d, e, f) {
-    let diskriminan = e * e - 4 * d * f; // Diskriminan
-    let hasil = '';
-
-    switch (true) {
-        case (diskriminan < 0):
-            hasil = 'Persamaan kuadrat tidak memiliki akar real.';
-            break;
-        case (diskriminan === 0):
-            // Jika diskriminan 0, hanya ada satu akar real
-            let x = -e / (2 * d);
-            hasil = `Akar tunggal: x = ${x}`;
-            break;
-        case (diskriminan > 0):
-            // Jika diskriminan lebih besar dari 0, ada dua akar real
-            let akarD = Math.sqrt(diskriminan);
-            let x1 = (-e + akarD) / (2 * d);
-            let x2 = (-e - akarD) / (2 * d);
-            hasil = `Akar-akar: x1 = ${x1}, x2 = ${x2}`;
-            break;
-        default:
-            hasil = 'Terjadi kesalahan dalam perhitungan.';
-            break;
-    }
-
-    return hasil;
-}
-
-// Fungsi untuk menghitung turunan pertama (fungsi kuadrat)
-function turunanPertama(d, e) {
-    return `f'(x) = ${2 * d}x + ${e}`;
-}
-
-// Fungsi untuk menghitung turunan kedua (fungsi kuadrat)
-function turunanKedua(d) {
-    return `f''(x) = ${2 * d}`;
-}
-
-// Fungsi utama untuk menghitung akar, turunan pertama dan kedua
-document.getElementById("quadratic-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    let d = parseFloat(document.getElementById('d').value);
-    let e = parseFloat(document.getElementById('e').value);
-    let f = parseFloat(document.getElementById('f').value);
+// Kalkulator Kuadrat
+   
+function solveInequality() {
+    // Ambil nilai input
+    const a = parseFloat(document.getElementById('a').value);
+    const b = parseFloat(document.getElementById('b').value);
+    const c = parseFloat(document.getElementById('c').value);
+    const operator = document.getElementById('operator').value;
+    const resultDiv = document.getElementById('result');
 
     // Validasi input
-    if (isNaN(d) || isNaN(e) || isNaN(f)) {
-        document.getElementById('output').innerHTML = 'Harap masukkan nilai yang valid untuk d, e, dan f.';
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+        resultDiv.innerHTML = "Harap masukkan nilai yang valid untuk a, b, dan c.";
         return;
     }
 
-    // Menghitung hasil akar persamaan kuadrat
-    let solusi = hitungAkar(d, e, f);
+    // Hitung diskriminan
+    const discriminant = b * b - 4 * a * c;
 
-    // Menghitung turunan pertama dan kedua
-    let turunanF1 = turunanPertama(d, e);
-    let turunanF2 = turunanKedua(d);
+    if (discriminant < 0) {
+        resultDiv.innerHTML = "Tidak ada solusi riil untuk pertidaksamaan kuadrat ini.";
+        return;
+    }
 
-    // Menampilkan hasil
-    document.getElementById('output').innerHTML = `
-        <p>${solusi}</p>
-        <p>${turunanF1}</p>
-        <p>${turunanF2}</p>
-    `;
-});
+    // Hitung akar-akar persamaan kuadrat
+    const x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
+    const x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
 
+    // Tentukan hasil berdasarkan operator
+    let solution = "";
+    switch (operator) {
+        case '>':
+            if (a > 0) {
+                solution = `x < ${x2} atau x > ${x1}`; // Solusi jika parabola terbuka ke atas
+            } else {
+                solution = `x > ${x2} atau x < ${x1}`; // Solusi jika parabola terbuka ke bawah
+            }
+            break;
+        case '<':
+            if (a > 0) {
+                solution = `x > ${x2} atau x < ${x1}`; // Solusi jika parabola terbuka ke atas
+            } else {
+                solution = `x < ${x2} atau x > ${x1}`; // Solusi jika parabola terbuka ke bawah
+            }
+            break;
+        case '>=':
+            if (a > 0) {
+                solution = `x ≤ ${x2} atau x ≥ ${x1}`; // Solusi jika parabola terbuka ke atas
+            } else {
+                solution = `x ≥ ${x2} atau x ≤ ${x1}`; // Solusi jika parabola terbuka ke bawah
+            }
+            break;
+        case '<=':
+            if (a > 0) {
+                solution = `x ≥ ${x2} atau x ≤ ${x1}`; // Solusi jika parabola terbuka ke atas
+            } else {
+                solution = `x ≤ ${x2} atau x ≥ ${x1}`; // Solusi jika parabola terbuka ke bawah
+            }
+            break;
+        default:
+            resultDiv.innerHTML = "Operator tidak valid.";
+            return;
+    }
 
+    resultDiv.innerHTML = `Solusi untuk pertidaksamaan: ${solution}`;
+}
 
 
 

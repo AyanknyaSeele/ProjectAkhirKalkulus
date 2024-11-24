@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <div data-aos="fade-down" data-aos-duration="1500">
+
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm">
+            <div class="container">
+                <img src="/img/58d3acc1-e780-4425-a872-dd162bfe942a.png " width="50cm">
+                <a class="navbar-brand" href="#">Kalkulus Ninja</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/homePage.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Manual_Book/MANUAL BOOK KALKULUS NINJA.pdf" download>Manual Book</a>
+                          </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Kalkulator
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="/kalkulator.html">Kalkulator Linear</a>
+                                <a class="dropdown-item" href="/kalkulatorKuadrat.html">Kalkulator Kuadrat</a>
+                                <a class="dropdown-item" href="/kalkulatorpecahan.html">Kalkulator Pecahan</a>
+                                <a class="dropdown-item" href="/kalkulatorIrasional.html">Kalkulator Irasional</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/QuizPage.html">Quiz</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/ProfilePage.html">Profil Kelompok</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- kalkilator -->
+     <div data-aos="fade-up" data-aos-duration="1500">
+
+         <div class="container1 mt-5">
+             
+        <h2>Kalkulator Pertidaksamaan Irasional</h2>
+        <p>
+            Masukkan nilai untuk <i>√ax ± b</i> dan pilih operator pertidaksamaan dan <i>c</i>
+          </p>
+          
+        <div class="container">
+            <form id="calculatorForm">
+                <label for="a">Koefisien a:</label>
+                <input type="number" id="a" required><br><br>
+                
+                <label for="b">Konstanta b:</label>
+                <input type="number" id="b" required><br><br>
+                
+                <label for="c">Konstanta c:</label>
+                <input type="number" id="c" required><br><br>
+
+                <label for="operator">Pilih operator:</label>
+                <select id="operator">
+                    <option value="ge">√(ax + b) ≥ c</option>
+                    <option value="le">√(ax + b) ≤ c</option>
+                    <option value="gt">√(ax + b) > c</option>
+                    <option value="lt">√(ax + b) < c</option>
+                </select><br><br>
+
+                <button type="submit">Hitung</button>
+            </form>
+        </div>
+        
+        <h3>Hasil:</h3>
+        <p id="solution"></p>
+        
+    </div>
+</div>
+
+    <script>
+        function solveIrrationalInequality(a, b, c, operator) {
+            // Memastikan a tidak 0 dan ax+b tidak negatif
+            if (a === 0) {
+                return "Koefisien 'a' tidak boleh 0.";
+            }
+
+            let resultMessage = "";
+            let xSolution = 0;
+            let domainMin = -b / a; // x >= -b/a untuk validitas akar
+
+            // Validasi nilai dalam akar agar tidak negatif (ax + b >= 0)
+            if (a > 0 && b < 0 && -b / a < 0) {
+                return "Tidak ada solusi yang valid karena nilai dalam akar akan negatif.";
+            }
+            if (a < 0 && b > 0 && -b / a > 0) {
+                return "Tidak ada solusi yang valid karena nilai dalam akar akan negatif.";
+            }
+
+            // Langkah 1: Kuadratkan kedua sisi, sesuai dengan operator yang dipilih
+            let rhs = c * c; // c^2
+
+            if (operator === "ge") {
+                // √(ax + b) ≥ c
+                xSolution = (rhs - b) / a;
+                if (xSolution >= domainMin) {
+                    resultMessage = `Himpunan solusi: x ∈ [${xSolution.toFixed(2)}, ∞) dengan syarat x ∈ [${domainMin.toFixed(2)}, ∞)`;
+                } else {
+                    resultMessage = "Tidak ada solusi yang memenuhi domain.";
+                }
+            } else if (operator === "le") {
+                // √(ax + b) ≤ c
+                xSolution = (rhs - b) / a;
+                if (xSolution >= domainMin) {
+                    resultMessage = `Himpunan solusi: x ∈ (-∞, ${xSolution.toFixed(2)}] dengan syarat x ∈ [${domainMin.toFixed(2)}, ∞)`;
+                } else {
+                    resultMessage = "Tidak ada solusi yang memenuhi domain.";
+                }
+            } else if (operator === "gt") {
+                // 1/√(ax + b) > c
+                if (rhs < b) {
+                    return "Tidak ada solusi karena kuadrat dari c lebih kecil dari b.";
+                }
+                xSolution = (rhs - b) / a;
+                if (xSolution > domainMin) {
+                    resultMessage = `Himpunan solusi: x ∈ (${xSolution.toFixed(2)}, ∞) dengan syarat x ∈ [${domainMin.toFixed(2)}, ∞)`;
+                } else {
+                    resultMessage = "Tidak ada solusi yang memenuhi domain.";
+                }
+            } else if (operator === "lt") {
+                // 1/√(ax + b) < c
+                xSolution = (rhs - b) / a;
+                if (xSolution >= domainMin) {
+                    resultMessage = `Himpunan solusi: x ∈ (-∞, ${xSolution.toFixed(2)}) dengan syarat x ∈ [${domainMin.toFixed(2)}, ∞)`;
+                } else {
+                    resultMessage = "Tidak ada solusi yang memenuhi domain.";
+                }
+            }
+
+            return resultMessage;
+        }
+
+        document.getElementById("calculatorForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let a = parseFloat(document.getElementById("a").value);
+            let b = parseFloat(document.getElementById("b").value);
+            let c = parseFloat(document.getElementById("c").value);
+            let operator = document.getElementById("operator").value;
+
+            let result = solveIrrationalInequality(a, b, c, operator);
+            document.getElementById("solution").innerText = result;
+        });
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+
+</html>

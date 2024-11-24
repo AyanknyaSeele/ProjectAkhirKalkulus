@@ -8,30 +8,76 @@ const quizData = [
       correct: 2
   },
   {
-      question: "Apa simbol pertidaksamaan?",
-      options: [">", 
-                "≤", 
-                "=", 
-                "≠"],
-      correct: 1
-  },
-  {
-      question: "Apa himpunan dari -9x + 18 < 0?",
-      options: ["HP = {x| x > 2, x ϵ R }", 
-                "HP = {x| x ≥ 2, x ϵ R }", 
-                "HP = {x| x > -2, x ϵ R }", 
-                "HP = {x| x ≥ -2, x ϵ R }"],
-      correct: 2
-  },
-  {
-      question: "What is the largest ocean on Earth?",
-      options: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      question: "Fungsi pertidaksamaan dalam matematika adalah untuk menunjukkan perbandingan?",
+      options: ["Memetakan satu bilangan riil di domain ke satu bilangan riil lain di kodomain", 
+                "Untuk menghitung jarak", 
+                "Konsep suatu fungsi hanya mendekati nilai tertentu, tetapi tidak benar-benar berada pada nilai tersebut", 
+                "Untuk menunjukkan perbandingan ukuran dua objek atau lebih"],
       correct: 3
   },
   {
-      question: "Which element has the chemical symbol 'O'?",
-      options: ["Gold", "Silver", "Oxygen", "Iron"],
-      correct: 2
+      question: "Hasil pertidaksamaan Linear dari 5x - 10  > 5?",
+      options: ["x > -3", 
+                "x > 2", 
+                "x > 3", 
+                "x > -2"],
+      correct: 0
+  },
+  {
+      question: "Berapakah hasil dari pertidaksamaan linear 2x – 1 > 3?",
+      options: ["x > -2", 
+                "x > 2", 
+                "x > 5", 
+                "x > -1"],
+      correct: 1
+  },
+  {
+      question: "Berapakah himpunan penyelesaian dari pertidaksamaan kuadrat ini 2x - 3x – 5 >= 0?",
+      options: ["x ≤ -5", 
+                "x ≥ 1", 
+                "x ≤ -6", 
+                "x ≥ 6"],
+      correct: 0
+  },
+  {
+    question: "Berapakah hasil dari 6x - 9x + 12 > 3?",
+    options: ["x > -6", 
+              "x < 3", 
+              "x < -9", 
+              "x > 6"],
+    correct: 1
+  },
+  {
+    question: "Berapakah penyelesaian dari pertidaksamaan pecahan (x + 2) / (x - 1) > 0?",
+    options: ["{x| < 2 atau x > -1}", 
+              "{x| < 2 atau x > 1}", 
+              "{x| < -2 atau x > -1}", 
+              "{x| < -2 atau x > 1}"],
+    correct: 3
+  },
+  {
+    question: "Selesaikan pecahan berikut x + 5 / x - 3 ≤ 0?",
+    options: ["x ∈ (-5 , 3]", 
+              "x ∈ [-5 , 3)", 
+              "x ∈ [3 , -5]", 
+              "x ∈ (-5 , -3)"],
+    correct: 1
+  },
+  {
+    question: "Himpunan penyelesaian dari pertidaksamaan √x-4 - 2 < 0 adalah ?",
+    options: ["{x| 4 ≤ x < 8}", 
+              "{x| 2 < x < 8}", 
+              "{x| 4 ≤ x < 12}", 
+              "{x| 0 ≤ x < 8}"],
+    correct: 0
+  },
+  {
+    question: "Himpunan penyelesaian dari pertidaksamaan √1x + 2 < 0 adalah ?",
+    options: ["x < 3", 
+              "x ≤ 3", 
+              "x > 3", 
+              "Tidak ada jawaban yang benar"],
+    correct: 3
   }
 ];
 
@@ -47,6 +93,7 @@ const timerEl = document.getElementById('timer');
 const progressBar = document.querySelector('.progress-bar');
 const quizContainer = document.getElementById('quiz');
 
+
 function loadQuestion() {
   const question = quizData[currentQuestion];
   questionEl.textContent = question.question;
@@ -59,7 +106,6 @@ function loadQuestion() {
       optionsEl.appendChild(button);
   });
   nextBtn.style.display = 'none';
-  timeLeft = 300;
   if (timer) clearInterval(timer);
   startTimer();
   updateProgress();
@@ -72,13 +118,27 @@ function selectOption(selectedButton, optionIndex) {
   nextBtn.style.display = 'block';
 }
 
+function timeOut() {
+  Swal.fire({
+    title: "Waktu Habis",
+    text: "Anda Akan Masuk Ke Halaman Score",
+    icon: "info",
+    confirmButtonColor: "#3085d6",
+    confirmButtonText: "Lihat Skor",
+  }).then(() => {
+    showResults()
+  });
+}
+
+
 function startTimer() {
   timer = setInterval(() => {
       timeLeft--;
       timerEl.textContent = `Time: ${timeLeft}s`;
-      if (timeLeft === 0) {
+      if (timeLeft <= 0) {
           clearInterval(timer);
           checkAnswer();
+          timeOut();
       }
   }, 1000);
 }
