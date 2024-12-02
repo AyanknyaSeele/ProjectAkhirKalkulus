@@ -23,8 +23,6 @@ function solveInequality(a, b, operator) {
     return result;
 }
 
-// Contoh penggunaan
-
 // Kalkulator Kuadrat
    
 function solveInequality() {
